@@ -26,7 +26,6 @@ function Todo(props) {
   };
 
   const updateTodo = () => {
-    //update todo
     db.collection('todos').doc(props.todo.id).set({
       todo : input
     }, { merge : true})
@@ -40,7 +39,7 @@ function Todo(props) {
         <div className={classes.paper}>
           <h1>I am Modal</h1>
           <input placeholder={props.todo.todo} value={input} onChange={event => setInput(event.target.value)}/>
-          <button onClick={updateTodo}>Update Todo</button>
+          <button onClick={updateTodo}>Update</button>
         </div>
       </Modal>
       <List className="todo-list">
